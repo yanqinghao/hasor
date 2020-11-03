@@ -4,7 +4,7 @@
     <parent>
         <groupId>net.hasor</groupId>
         <artifactId>hasor-parent</artifactId>
-        <version>4.2.2-SNAPSHOT</version>
+        <version>4.2.1</version>
         <relativePath>../..</relativePath>
     </parent>
 
@@ -137,18 +137,22 @@
         <dependency>
             <groupId>net.hasor</groupId>
             <artifactId>hasor-web</artifactId>
+            <version>4.2.1</version>
         </dependency>
         <dependency>
             <groupId>net.hasor</groupId>
             <artifactId>hasor-db</artifactId>
+            <version>4.2.1</version>
         </dependency>
         <dependency>
             <groupId>net.hasor</groupId>
             <artifactId>hasor-dataql</artifactId>
+            <version>4.2.1</version>
         </dependency>
         <dependency>
             <groupId>net.hasor</groupId>
             <artifactId>hasor-dataql-fx</artifactId>
+            <version>4.2.1</version>
         </dependency>
 
         <dependency>

@@ -1,3 +1,6 @@
+const proxyPath = () => {
+    return (window.location.pathname === '/') ? '' : window.location.pathname;
+};
 const contextPath = () => {
     return (window.CONTEXT_PATH === '{CONTEXT_PATH}') ? '' : window.CONTEXT_PATH;
 };
@@ -29,21 +32,21 @@ const defaultOptionData = {
 const ApiUrl = {
     checkVersion: 'http://apis.hasor.net/projects/hasor-dataway/checkVersion',
     //
-    apiInfo: contextPath() + adminBaseUrl(`/api/api-info`),
-    apiList: contextPath() + adminBaseUrl(`/api/api-list`),
-    apiDetail: contextPath() + adminBaseUrl(`/api/api-detail`),
-    apiHistory: contextPath() + adminBaseUrl(`/api/api-history`),
-    apiHistoryInfo: contextPath() + adminBaseUrl(`/api/get-history`),
+    apiInfo: proxyPath() + contextPath() + adminBaseUrl(`/api/api-info`),
+    apiList: proxyPath() + contextPath() + adminBaseUrl(`/api/api-list`),
+    apiDetail: proxyPath() + contextPath() + adminBaseUrl(`/api/api-detail`),
+    apiHistory: proxyPath() + contextPath() + adminBaseUrl(`/api/api-history`),
+    apiHistoryInfo: proxyPath() + contextPath() + adminBaseUrl(`/api/get-history`),
     //
-    execute: contextPath() + apiBaseUrl(`/`),
-    apiSave: contextPath() + adminBaseUrl(`/api/save-api`),
-    perform: contextPath() + adminBaseUrl(`/api/perform`),
-    smokeTest: contextPath() + adminBaseUrl(`/api/smoke`),
-    publish: contextPath() + adminBaseUrl(`/api/publish`),
-    disable: contextPath() + adminBaseUrl(`/api/disable`),
-    deleteApi: contextPath() + adminBaseUrl(`/api/delete`),
+    execute: proxyPath() + contextPath() + apiBaseUrl(`/`),
+    apiSave: proxyPath() + contextPath() + adminBaseUrl(`/api/save-api`),
+    perform: proxyPath() + contextPath() + adminBaseUrl(`/api/perform`),
+    smokeTest: proxyPath() + contextPath() + adminBaseUrl(`/api/smoke`),
+    publish: proxyPath() + contextPath() + adminBaseUrl(`/api/publish`),
+    disable: proxyPath() + contextPath() + adminBaseUrl(`/api/disable`),
+    deleteApi: proxyPath() + contextPath() + adminBaseUrl(`/api/delete`),
     //
-    analyzeSchema: contextPath() + adminBaseUrl(`/api/analyze-schema`),
+    analyzeSchema: proxyPath() + contextPath() + adminBaseUrl(`/api/analyze-schema`),
 };
 
 export {
