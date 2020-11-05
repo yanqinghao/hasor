@@ -65,6 +65,17 @@ public class DatawayModule implements WebModule {
         defaultContext.bindFinder(apiBinder.getProvider(DatawayFinder.class));
         //
         String dalType = environment.getVariable("HASOR_DATAQL_DATAWAY_DAL_TYPE");
+        String appId = environment.getVariable("SP_APP_ID");
+        String userId = environment.getVariable("SP_USER_ID");
+        String nodeId = environment.getVariable("SP_NODE_ID");
+        String port = environment.getVariable("SERVER.PORT");
+        if (StringUtils.isBlank(port)) {
+            port = "8080";
+        }
+        String proxyUri = "/proxr/" + userId + "/" + appId + "/" + nodeId + "/" + port;
+        if (StringUtils.isBlank(appId)) {
+            proxyUri = "/";
+        }
         if (StringUtils.isBlank(dalType)) {
             throw new NullPointerException("dataway HASOR_DATAQL_DATAWAY_DAL_TYPE is missing.");
         }
@@ -133,7 +144,7 @@ public class DatawayModule implements WebModule {
             apiBinder.mappingTo(fixUrl(uiBaseUri + "/" + toUrl.value())).with(aClass);
         }
         apiBinder.filter(fixUrl(uiBaseUri + "/*")).through(Integer.MAX_VALUE, new InterfaceAuthorizationFilter(uiBaseUri));
-        apiBinder.filter(fixUrl(uiBaseUri + "/*")).through(Integer.MAX_VALUE, new InterfaceUiFilter(apiBaseUri, uiBaseUri));
+        apiBinder.filter(fixUrl(uiBaseUri + "/*")).through(Integer.MAX_VALUE, new InterfaceUiFilter(proxyUri, apiBaseUri, uiBaseUri));
     }
 
     private static String fixUrl(String url) {
