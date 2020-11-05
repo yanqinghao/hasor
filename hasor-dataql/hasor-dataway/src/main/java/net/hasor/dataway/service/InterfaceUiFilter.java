@@ -48,12 +48,14 @@ public class InterfaceUiFilter implements InvokerFilter {
     private static final String               resourceBaseUri  = "/META-INF/hasor-framework/dataway-ui/";
     private static final String               datawayVersion;
     private              String               resourceIndexUri = null;
+    private final        String               proxyUri;
     private final        String               apiBaseUri;
     private final        String               uiBaseUri;
     private final        String               uiAdminBaseUri;
     private final        Map<String, Integer> resourceSize;
 
-    public InterfaceUiFilter(String apiBaseUri, String uiBaseUri) {
+    public InterfaceUiFilter(String proxyUri, String apiBaseUri, String uiBaseUri) {
+        this.proxyUri = proxyUri;
         this.apiBaseUri = apiBaseUri;
         this.uiBaseUri = uiBaseUri;
         this.uiAdminBaseUri = fixUrl(uiBaseUri + "/api/");
@@ -124,6 +126,7 @@ public class InterfaceUiFilter implements InvokerFilter {
                 contextPath = contextPath.substring(0, contextPath.length() - 1);
             }
             String htmlBody = new String(outputStream.toByteArray());
+            htmlBody = htmlBody.replace("{PROXY_PATH}", this.proxyUri);
             htmlBody = htmlBody.replace("{CONTEXT_PATH}", contextPath);
             htmlBody = htmlBody.replace("{API_BASE_URL}", fixUrl(this.apiBaseUri));
             htmlBody = htmlBody.replace("{ADMIN_BASE_URL}", fixUrl(this.uiBaseUri));
