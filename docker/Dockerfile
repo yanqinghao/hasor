@@ -15,7 +15,7 @@ RUN apt-get update && \
     apt-get clean && npm config set registry http://registry.npm.taobao.org
 
 RUN mkdir -p /root/.m2 && cp -f utils/settings.xml /root/.m2/ && \
-    cd hasor-dataql/hasor-dataway/ && mvn package
+    cd hasor-dataql/hasor-dataway/ && mvn clean install
 
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
 
