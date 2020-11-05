@@ -21,8 +21,8 @@ NAMESPACE="shuzhi-amd64"
 docker build --build-arg DOCKER_BASE=${DOCKERBASE} -t \
     registry-vpc.cn-shanghai.aliyuncs.com/${NAMESPACE}/${BUILDNAMES}:${BUILD_VERSIONS} \
     -f docker/Dockerfile .
-# docker push registry-vpc.cn-shanghai.aliyuncs.com/${NAMESPACE}/${BUILDNAMES}:${BUILD_VERSIONS}
+docker push registry-vpc.cn-shanghai.aliyuncs.com/${NAMESPACE}/${BUILDNAMES}:${BUILD_VERSIONS}
 
-# docker tag registry-vpc.cn-shanghai.aliyuncs.com/${NAMESPACE}/${BUILDNAMES}:${BUILD_VERSIONS} \
-#     registry-vpc.cn-shanghai.aliyuncs.com/${NAMESPACE}/${BUILDNAMES}:${BUILD_TAGS}
-# docker push registry-vpc.cn-shanghai.aliyuncs.com/${NAMESPACE}/${BUILDNAMES}:${BUILD_TAGS}
+docker tag registry-vpc.cn-shanghai.aliyuncs.com/${NAMESPACE}/${BUILDNAMES}:${BUILD_VERSIONS} \
+    registry-vpc.cn-shanghai.aliyuncs.com/${NAMESPACE}/${BUILDNAMES}:${BUILD_TAGS}
+docker push registry-vpc.cn-shanghai.aliyuncs.com/${NAMESPACE}/${BUILDNAMES}:${BUILD_TAGS}
