@@ -1,5 +1,5 @@
 const proxyPath = () => {
-    return (window.PROXY_PATH === '/') ? '' : window.PROXY_PATH;
+    return (window.PROXY_PATH === '/' | window.PROXY_PATH === '{PROXY_PATH}') ? '' : window.PROXY_PATH;
 };
 const contextPath = () => {
     return (window.CONTEXT_PATH === '{CONTEXT_PATH}') ? '' : window.CONTEXT_PATH;

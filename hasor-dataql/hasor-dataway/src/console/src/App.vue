@@ -21,12 +21,12 @@
       </div>
       <div class="gitStyle">
         <!-- Github -->
-        <span><a target="_blank" href="https://github.com/zycgit/hasor/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/zycgit/hasor?style=social"></a></span>
-        <span><a target="_blank" href="https://github.com/zycgit/hasor/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/zycgit/hasor?style=social"></a></span>
+        <!-- <span><a target="_blank" href="https://github.com/zycgit/hasor/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/zycgit/hasor?style=social"></a></span> -->
+        <!-- <span><a target="_blank" href="https://github.com/zycgit/hasor/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/zycgit/hasor?style=social"></a></span> -->
         <br />
         <!-- gitee -->
-        <span><a target="_blank" href='https://gitee.com/zycgit/hasor/stargazers'><img src='https://gitee.com/zycgit/hasor/badge/star.svg?theme=white' alt='star'></a></span>
-        <span><a target="_blank" href='https://gitee.com/zycgit/hasor/members'><img src='https://gitee.com/zycgit/hasor/badge/fork.svg?theme=white' alt='fork'></a></span>
+        <!-- <span><a target="_blank" href='https://gitee.com/zycgit/hasor/stargazers'><img src='https://gitee.com/zycgit/hasor/badge/star.svg?theme=white' alt='star'></a></span> -->
+        <!-- <span><a target="_blank" href='https://gitee.com/zycgit/hasor/members'><img src='https://gitee.com/zycgit/hasor/badge/fork.svg?theme=white' alt='fork'></a></span> -->
       </div>
     </el-header>
     <el-main>
@@ -34,7 +34,7 @@
         <router-view />
       </div>
     </el-main>
-    <el-dialog :visible.sync="newVersionDialog" width="50%" center :destroy-on-close="true">
+    <!-- <el-dialog :visible.sync="newVersionDialog" width="50%" center :destroy-on-close="true">
       <span slot="title" class="dialog-footer">NewVersion : {{ newVersionInfo.lastVersion }}</span>
       <span>Your version : {{ currentVersion }}</span>
       <div v-if="newVersionInfo.changelog !=='unknown'" style="padding: 10px;">
@@ -56,7 +56,7 @@
         <br />
         <el-checkbox v-model="newVersionDialogRemember">Remember and don't show again</el-checkbox>
       </span>
-    </el-dialog>
+    </el-dialog> -->
   </el-container>
 </template>
 
