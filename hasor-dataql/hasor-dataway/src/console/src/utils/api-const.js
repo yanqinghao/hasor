@@ -50,5 +50,5 @@ const ApiUrl = {
 };
 
 export {
-    ApiUrl, defaultOptionData, apiBaseUrl, contextPath
+    ApiUrl, defaultOptionData, apiBaseUrl, contextPath, proxyPath
 };

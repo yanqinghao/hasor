@@ -72,7 +72,7 @@
 import RequestPanel from '../components/RequestPanel';
 import ResponsePanel from '../components/ResponsePanel';
 import request from '../utils/request';
-import {ApiUrl, contextPath} from '../utils/api-const';
+import {ApiUrl, contextPath, proxyPath} from '../utils/api-const';
 import {checkRequestBody, errorBox, headerData, methodTagInfo, statusTagInfo} from '../utils/utils';
 
 export default {
@@ -119,7 +119,7 @@ export default {
     },
     methods: {
         requestPath(apiPath) {
-            return contextPath() + apiPath;
+            return proxyPath() + contextPath() + apiPath;
         },
         treeClick(obj, node, e) {
             this.apiSearch = obj.label;
@@ -251,7 +251,7 @@ export default {
             }
             //
             const self = this;
-            const requestURL = contextPath() + ('/' + this.requestApiInfo.path).replace('//', '/');
+            const requestURL = proxyPath() + contextPath() + ('/' + this.requestApiInfo.path).replace('//', '/');
             request(requestURL, {
                 'direct': true,
                 'method': this.requestApiInfo.select,
