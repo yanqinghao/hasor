@@ -148,7 +148,7 @@
 
     <build>
         <plugins>
-            <plugin>
+            <!-- <plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<executions>
 					<execution>
@@ -159,19 +159,19 @@
 					</execution>
 				</executions>
 				<configuration>
-					<!-- <archive>
+					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<mainClass>com.spproject.dataway.DatawayApplication</mainClass>
 						</manifest>
-					</archive> -->
+					</archive>
 					<descriptorRefs>
 						<descriptorRef>jar-with-dependencies</descriptorRef>
 					</descriptorRefs>
 				</configuration>
-			</plugin>
+			</plugin> -->
             <!-- shade -->
-            <!-- <plugin>
+            <plugin>
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>3.2.1</version>
                 <executions>
@@ -185,7 +185,7 @@
                             <promoteTransitiveDependencies>true</promoteTransitiveDependencies>
                             <artifactSet>
                                 <includes>
-                                    <include>${project.groupId}:*:*</include>
+                                    <include>**</include>
                                 </includes>
                             </artifactSet>
                             <transformers>
@@ -196,7 +196,7 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin> -->
+            </plugin>
             <!-- Javadoc -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
