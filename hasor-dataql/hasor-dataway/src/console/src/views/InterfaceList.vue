@@ -119,7 +119,7 @@ export default {
     },
     methods: {
         requestPath(apiPath) {
-            return proxyPath() + contextPath() + apiPath;
+            return contextPath() + apiPath;
         },
         treeClick(obj, node, e) {
             this.apiSearch = obj.label;
